@@ -1,0 +1,708 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "0b59fc2a-6669-4e8d-b1ef-41a1d9b90cc9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q1. Which keyword is used to create a function? \n",
+    "#Create a function to return a list of odd numbers in the\n",
+    "#range of 1 to 25."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "567899a4-a9e3-4adf-a7c3-a430cc69d56f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#answer=In most programming languages, the keyword used to create a function\n",
+    "#is typically \"function\" or \"def\" (short for define). However, the specific keyword can vary depending\n",
+    "#on the programming language you are using.\n",
+    "\n",
+    "#Since you haven't mentioned a specific programming language, \n",
+    "#I'll provide an example using Python, where\n",
+    "#the keyword used to create a function\n",
+    "#is \"def\". Here's an example of a function that\n",
+    "#returns a list of odd numbers in the range of 1 to 25:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "dc872980-2b1e-4a90-a5d5-b8ad484ebfa0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25]\n"
+     ]
+    }
+   ],
+   "source": [
+    "def get_odd_numbers():\n",
+    "    odd_numbers = []\n",
+    "    for number in range(1, 26):\n",
+    "        if number % 2 != 0:\n",
+    "            odd_numbers.append(number)\n",
+    "    return odd_numbers\n",
+    "\n",
+    "# Call the function\n",
+    "result = get_odd_numbers()\n",
+    "print(result)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "ae9daa4a-9ac4-4790-95d5-b5b24d7899f6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q2. Why *args and **kwargs is used in some functions? \n",
+    "#Create a function each for *args and **kwargs to demonstrate their use."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "3eb0091f-93c3-4f0d-859b-24ce9f2726a0",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#answer= *args and **kwargs are used to pass a variable number of arguments to a function.\n",
+    "\n",
+    "#1.*Args=The *args syntax allows a function to accept any number of positional arguments as a tuple.\n",
+    "#It is useful when you want to pass an arbitrary number of arguments to a function without explicitly specifying their number.\n",
+    "#Inside the function, you can iterate over the *args tuple to access the individual arguments."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "1d9ef817-79ed-4325-9ed4-1c383b890d8a",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def testl1(*args):\n",
+    "    return args"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "867330e2-460e-4e61-a2a9-3acef9c5b1b6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "tuple"
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(testl1())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "97328de9-480b-4f3e-bce0-04c8b9c66c5c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def testl2(*args,a):\n",
+    "    return args,a"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "95a77199-ae4b-4853-8189-da3b0753f9f7",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "((1, 2, 3, 4), 23)"
+      ]
+     },
+     "execution_count": 16,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "testl2(1,2,3,4,a=23)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "be206e24-9149-460c-beb0-8dcc3f322eb7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#2.**kwargs=The **kwargs syntax allows a function to accept any number \n",
+    "#of keyword arguments as a dictionary. It is useful when you want to pass a variable\n",
+    "#number of keyword arguments to a function. Inside the function, you can access\n",
+    "#the values of the keyword arguments using their respective keys."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "5dcc6833-3001-4952-a060-50a6f5b1ad54",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def testl3(**kwargs):\n",
+    "    return kwargs"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "34d3417d-fc8f-4367-97a3-c960e31b4ee6",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{}"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "testl3()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "6c6c3f32-ccd6-4066-8792-5dbd644b7a0b",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "dict"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(testl3())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "id": "597d9624-1e16-4d84-8de9-f16ec8c19e63",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'a': [1, 2, 3, 4], 'b': 'vivek', 'c': 23.45}"
+      ]
+     },
+     "execution_count": 22,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "testl3(a=[1,2,3,4],b=\"vivek\",c=23.45)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "97df1378-c107-44bb-8a6e-b81a9fc05b9b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q3. What is an iterator in python? \n",
+    "#Name the method used to initialise the iterator object and the methodused for iteration.\n",
+    "#Use these methods to print the first five elements of the given list [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "928a4823-8e2d-4b1a-9d91-3e9751230c29",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#answer= An iterator is an object that implements the iterator protocol, which consists of the __iter__() and __next__() methods.\n",
+    "#Iterators are used to iterate over a sequence of elements, such as lists, tuples, or custom objects, one element at a time.\n",
+    "\n",
+    "\n",
+    "#The __iter__() method is used to initialize the iterator object.\n",
+    "#It returns the iterator object itself and is called when you want to create an iterator for an iterable object. \n",
+    "#The __next__() method is used to retrieve the next element from the iterator. It returns the next item in \n",
+    "#the sequence and raises the StopIteration exception when there are no more items to return.\n",
+    "\n",
+    "#Here's an example of how to use these methods to print\n",
+    "#the first five elements of the given\n",
+    "#list [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "2594ac7a-f945-4ee5-b9ce-3bef59d650a8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_list = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "f0a778bf-c3db-4f8a-8877-560ca82e05dd",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create an iterator object using iter()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "a3ce318a-04ed-4f0a-af13-d71ae6032f99",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "my_iter = iter(my_list)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "b84ea821-5231-4c43-b51e-0133f700c30d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Iterate over the first five elements using next()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "eb9e4590-8ff9-4a56-bfc4-606b4354abac",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n",
+      "4\n",
+      "6\n",
+      "8\n",
+      "10\n"
+     ]
+    }
+   ],
+   "source": [
+    "for _ in range(5):\n",
+    "    element = next(my_iter)\n",
+    "    print(element)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "88f05890-5f91-46c8-841b-5246920b2f03",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q4. What is a generator function in python?\n",
+    "#Why yield keyword is used? Give an example of a generator function."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "22545060-eec8-4459-8300-9bdc5e4d046f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#answer= a generator function is a special type of function that generates\n",
+    "#a sequence of values using the yield keyword. \n",
+    "#It allows you to create iterators\n",
+    "#in a more concise and memory-efficient way compared to creating an iterator class manually.\n",
+    "\n",
+    "#Agenerator function is a special type of function that generates\n",
+    "#a sequence of values using the yield keyword. \n",
+    "#It allows you to create iterators in a more concise and \n",
+    "#memory-efficient way compared to creating an iterator class manually.\n",
+    "\n",
+    "#The yield keyword is used to define the values of the sequence generated by the generator function.\n",
+    "#It allows the generator to produce a series of values on-the-fly, one at a time, instead of generating \n",
+    "#all the values at once. This lazy evaluation saves memory and improves performance, especially when dealing with \n",
+    "#large sequences or infinite sequences."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "9d00aec5-8526-4a50-b680-f41e8946b094",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "range(0, 10)"
+      ]
+     },
+     "execution_count": 33,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "range (10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "432ceb2f-6537-4b65-b16f-244b7a1b643e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n",
+      "1\n",
+      "2\n",
+      "3\n",
+      "4\n",
+      "5\n",
+      "6\n",
+      "7\n",
+      "8\n",
+      "9\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in range (10):\n",
+    "    print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 45,
+   "id": "3502d66d-00f3-4b81-8f30-844108020947",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def test_fib(n):\n",
+    "    a, b = 0, 1\n",
+    "    for _ in range(n):\n",
+    "        yield a\n",
+    "        a, b = b, a + b\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 46,
+   "id": "0a295922-2fda-4e65-b4bb-0327e739fe83",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "<generator object test_fib at 0x7fc03c51dbd0>"
+      ]
+     },
+     "execution_count": 46,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "test_fib(10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "id": "7e2a0be8-71ab-4720-9099-7e45bff71c5b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n",
+      "1\n",
+      "1\n",
+      "2\n",
+      "3\n",
+      "5\n",
+      "8\n",
+      "13\n",
+      "21\n",
+      "34\n"
+     ]
+    }
+   ],
+   "source": [
+    "for i in test_fib(10):\n",
+    "    print(i)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "id": "b9aa06f9-6a61-4e1e-8042-29db40cc564b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q5.Create a generator function for prime numbers less than 1000. \n",
+    "#Use the next() method to print thefirst 20 prime numbers."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "id": "5b6ad00d-e010-4dae-aa6f-8780e0e3e470",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#answer= Here's a generator function that generates prime numbers less than 1000, \n",
+    "#and then we'll use the next() method to print the first 20 prime numbers:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 50,
+   "id": "f779c903-5581-4ab4-bb22-207ecbcb6e81",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def prime_generator():\n",
+    "    primes = []\n",
+    "    num = 2\n",
+    "    while num < 1000:\n",
+    "        is_prime = True\n",
+    "        for prime in primes:\n",
+    "            if num % prime == 0:\n",
+    "                is_prime = False\n",
+    "                break\n",
+    "        if is_prime:\n",
+    "            primes.append(num)\n",
+    "            yield num\n",
+    "        num += 1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 51,
+   "id": "97c4fcc3-6e7e-4d43-8294-c216d33d0f94",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Create a generator object"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 52,
+   "id": "6c8af20d-38eb-4ab3-bfd4-90c07080a0f5",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "prime_gen = prime_generator()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 53,
+   "id": "835e7410-2651-46d6-bbf2-9792520283e5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "2\n",
+      "3\n",
+      "5\n",
+      "7\n",
+      "11\n",
+      "13\n",
+      "17\n",
+      "19\n",
+      "23\n",
+      "29\n",
+      "31\n",
+      "37\n",
+      "41\n",
+      "43\n",
+      "47\n",
+      "53\n",
+      "59\n",
+      "61\n",
+      "67\n",
+      "71\n"
+     ]
+    }
+   ],
+   "source": [
+    "for _ in range(20):\n",
+    "    prime_num = next(prime_gen)\n",
+    "    print(prime_num)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 54,
+   "id": "c94a3f41-56a1-4dd6-9bc8-0b5a762a5e1f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#In this code, the prime_generator() function generates prime numbers less than 1000.\n",
+    "#It maintains a list of prime numbers found so far and checks if the current number (num) is\n",
+    "#divisible by any of the primes in the list. If it is not divisible by any of the primes, it is considered a prime number,\n",
+    "#added to the list, and yielded by the generator."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "86d2c28d-d0d6-4775-b0a8-9737d22e6272",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q7.Q7. Write a List Comprehension to iterate through the given string\n",
+    "#: ‘pwskills’.Expected output: ['p', 'w', 's', 'k', 'i', 'l', 'l', 's']"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "64a85da1-8665-4868-9dea-782fc11bcd99",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Answer="
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "0ea83463-fa14-42d1-b763-db38ac10e471",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "s=\"pwskills\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "e338529d-d8fc-47a1-b674-ca041d6c9711",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['P', 'W', 'S', 'K', 'I', 'L', 'L', 'S']"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "list(map(lambda s:s.upper(),s))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "2ab335b5-ac2c-46c5-9d46-6f7fdcfb51a1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q9.Write a code to print odd numbers from 1 to 100 using list comprehension.\n",
+    "#Note: Use a list comprehension to create a list from 1 to 100 and use another \n",
+    "#List comprehension to filterout odd numbers."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "e3a1150c-929e-4131-9476-9adcc0fb1e91",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 83, 85, 87, 89, 91, 93, 95, 97, 99]\n"
+     ]
+    }
+   ],
+   "source": [
+    "odd_numbers = [num for num in range(1, 101) if num % 2 != 0]\n",
+    "print(odd_numbers)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "fdd3a8e0-bee0-4717-b3d1-9cc2780cc601",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
