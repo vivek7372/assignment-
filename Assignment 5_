@@ -1,0 +1,369 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "39841801-f512-4d01-81e1-58d8a9aa0600",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q1. Explain Class and Object with respect to Object-Oriented Programming.\n",
+    "#Give a suitable example."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "3c3f20c0-a073-4f13-81d0-eeb0e5c257b1",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#answer= In object-oriented programming (OOP), a class is a blueprint or a template for creating objects.\n",
+    "#It defines the properties (attributes) and behaviors (methods)\n",
+    "#that the objects of that class will have. In other words, a class \n",
+    "#provides a set of instructions on how to create objects of a specific type\n",
+    "\n",
+    "#An object, on the other hand, is an instance of a class.\n",
+    "#It is a tangible entity that is created based on the class definition.\n",
+    "#Objects have their own unique identity and can store data (attributes) \n",
+    "#and perform actions (methods) defined by the class.\n",
+    "#for example:\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "2ba73b9b-dc92-4c94-aded-9d19026cb4c4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a=1"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "58ef4b84-e5b6-4dd3-bf80-d025cb0bc537",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'int'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(type(a))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "d4560f9d-941e-4abd-801d-6eef0890b5ae",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class test:\n",
+    "    pass"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "9f5c1d66-fa98-401e-b0ed-1a6b34535b32",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "a= test()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "955691e1-e7ac-4e3c-9d7c-df1c2a0a9bb8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "__main__.test"
+      ]
+     },
+     "execution_count": 9,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "type(a)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "id": "16911a52-3ec2-4777-b965-ac9b22986fe2",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class pwskillsl:\n",
+    "    def __init__(self, phone_number, email_id, student_id):\n",
+    "        self.phone_number = phone_number\n",
+    "        self.email_id = email_id\n",
+    "        self.student_id = student_id\n",
+    "        \n",
+    "    def return_student_detail(self):\n",
+    "        return self.student_id, self.phone_number, self.email_id"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 23,
+   "id": "f0ca7a68-749d-4845-aa17-536aff12648d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "rohan = pwskillsl(12235545, \"rohan@gmail.com\", 102)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 24,
+   "id": "4f1274d2-da02-4613-ba50-e4ffc515a73f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(102, 12235545, 'rohan@gmail.com')\n"
+     ]
+    }
+   ],
+   "source": [
+    "student_details = rohan.return_student_detail()\n",
+    "print(student_details)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 25,
+   "id": "e69e2447-fd06-44c8-b307-3732043cabc6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q2. Name the four pillars of OOPs."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 26,
+   "id": "ce8c3b5a-7437-4086-a9b0-ad9d6144f759",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#anwer=The four pillars of object-oriented programming (OOP) are:\n",
+    "#1.Encapsulation\n",
+    "#2.Inheritance\n",
+    "#3.Polymorphism\n",
+    "#4.Abstraction"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "id": "f85c5a10-3bdc-4cea-99bc-612a1c7d4e43",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q3. Explain why the __init__() function is used.\n",
+    "#Give a suitable example."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "9fbddedb-caf0-421f-9f3e-52bcc6534c28",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#answer=The __init__() function is a special method in Python classes that\n",
+    "#is used to initialize and set up the initial state of an object when it is created. \n",
+    "#It is also known as the constructor method. The __init__() method is automatically called \n",
+    "#when a new instance of a class is created.\n",
+    "\n",
+    "#The main purposes of the __init__() method are:\n",
+    "\n",
+    "#1.Initializing Object Attributes: The __init__() method allows you to define\n",
+    "#and initialize the attributes (properties) of an object. These attributes can hold specific values\n",
+    "#that are unique to each instance of the class.\n",
+    "#By defining them in the __init__() method, you ensure that they are \n",
+    "#initialized correctly for each object created from the class.\n",
+    "\n",
+    "#2.Setting the Initial State: The __init__() method is responsible\n",
+    "#for setting the initial state of the object. It allows you to perform any \n",
+    "#necessary setup or configuration tasks that need to be done when the object is created. \n",
+    "#You can assign default values to attributes, call other methods, or perform any other\n",
+    "#operations required to properly initialize the object.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "55636201-0cd3-4e29-b12c-299603566796",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class pwskillsl:\n",
+    "    def __init__(self, phone_number, email_id, student_id):\n",
+    "        self.phone_number = phone_number\n",
+    "        self.email_id = email_id\n",
+    "        self.student_id = student_id\n",
+    "        \n",
+    "    def return_student_detail(self):\n",
+    "        return self.student_id, self.phone_number, self.email_id"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "id": "3f7db5f5-8d06-45fe-b6c9-32aa1bb0ef48",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "rohan = pwskillsl(12235545, \"rohan@gmail.com\", 102)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 32,
+   "id": "e2c0dabe-a606-4d9f-9a61-ddddf631ad7e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "(102, 12235545, 'rohan@gmail.com')\n"
+     ]
+    }
+   ],
+   "source": [
+    "student_details = rohan.return_student_detail()\n",
+    "print(student_details)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 33,
+   "id": "35de4b5b-b704-44ac-9fc5-a823bcae278d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Q4. Why self is used in OOPs?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 34,
+   "id": "5225650b-4fcb-4a51-b510-595aece5d354",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# answer=In object-oriented programming (OOP), \n",
+    "#`self` is a conventional name used as the first parameter in method definitions within a class. \n",
+    "#It represents the instance of the class and allows accessing the attributes and methods of that particular instance.\n",
+    "\n",
+    "#The `self` parameter is used to differentiate between instance variables (attributes) \n",
+    "#and local variables within a class. When you call a method on an object, such as `object.method()`,\n",
+    "#the object automatically passes itself as the first argument to the method. By convention, \n",
+    "#this argument is named `self`, although you can choose any valid variable name.\n",
+    "\n",
+    "#Here are the key reasons why `self` is used in OOP:\n",
+    "\n",
+    "#1. Instance Binding: `self` allows the method to bind (associate) with the specific instance \n",
+    "#of the class that called it. It ensures that the attributes and methods of that instance are\n",
+    "#accessed correctly. Without `self`, the method would not know which instance's attributes or\n",
+    "#methods to refer to.\n",
+    "\n",
+    "#2. Accessing Instance Variables: Using `self`, you can access the instance variables \n",
+    "#(attributes) within the class methods. \n",
+    "#It enables reading and modifying the specific instance's attributes. \n",
+    "#Without `self`, you would not be able to access or modify the instance variables,\n",
+    "#resulting in potential errors or incorrect behavior.\n",
+    "\n",
+    "#3. Method Invocation: When you call a method on an object,\n",
+    "#you typically use the object name followed by the method name (e.g., `object.method()`). \n",
+    "#The `self` parameter allows the method to be called on the object and implicitly passes \n",
+    "#the object itself as the first argument. This way, the method can work with the attributes\n",
+    "#and behavior specific to that instance."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "04555259-6d38-4f81-bc00-6e9cc77170b4",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "class Person:\n",
+    "    def __init__(self, name):\n",
+    "        self.name = name\n",
+    "\n",
+    "    def say_hello(self):\n",
+    "        print(f\"Hello, my name is {self.name}.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "6f08566c-8ccc-4b07-af21-5900807d6f9e",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "person = Person(\"rohan\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "cb01b130-5e40-4579-9794-8a9624e2602e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hello, my name is rohan.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Calling the say_hello method\n",
+    "person.say_hello() "
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
